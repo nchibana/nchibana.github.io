@@ -49,3 +49,4 @@ Finally, regarding country of origin, I found that stress scores were higher for
 
 In conclusion, characteristics inherent to our identity are related to our personality and behavioural traits, but it is still to be investigated how this population of online test takers differs from the general population.
 
+You can find the original Medium post <a href="https://medium.com/@nayomichibana/how-do-psychometric-test-results-vary-across-age-race-and-gender-2651672cd96c">here</a>.
