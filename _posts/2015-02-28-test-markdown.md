@@ -8,67 +8,44 @@ tags: [test]
 comments: true
 ---
 
-You can write regular [markdown](http://markdowntutorial.com/) here and Jekyll will automatically convert it to a nice webpage.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](http://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
+For my first data science project, I analyzed the results of three different psychometric tests available online, with a total of 110,000 test results which were released with the consent of all test takers.
 
-**Here is some bold text**
+I found that there is a statistical relationship between different demographic characteristics and personality and behavioral traits.
 
-## Here is a secondary heading
+For example, I found that there seems to be a statistical relationship between professed religion and stress scores.
 
-Here's a useless table:
+<div>
+    <a href="https://plot.ly/~keiko/0/?share_key=WghoakngNzWKufzp7IpggI" target="_blank" title="my-graph.html" style="display: block; text-align: center;"><img src="https://plot.ly/~keiko/0.png?share_key=WghoakngNzWKufzp7IpggI" alt="my-graph.html" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+</div>
 
-| Number | Next number | Previous number |
-| :------ |:--- | :--- |
-| Five | Six | Four |
-| Ten | Eleven | Nine |
-| Seven | Eight | Six |
-| Two | Three | One |
+Here you can see that those who labelled themselves as Mormons registered the highest stress scores, while Protestant register the lowest ones. I conducted a two-sample t-test to determine whether the difference in means was significant and it was. 
+
+In terms of age and gender, I found that the older test takers registered higher levels of emotional stability compared to those who are younger. Also, males scored higher across all ages. The chi-squared results for this test also indicate that the variables of age and emotional stability are not independent of each other.
+
+<div>
+    <a href="https://plot.ly/~keiko/10/?share_key=GMeCaIWEDt29V0E7NCsPmc" target="_blank" title="emotional_stability_line_chart" style="display: block; text-align: center;"><img src="https://plot.ly/~keiko/10.png?share_key=GMeCaIWEDt29V0E7NCsPmc" alt="emotional_stability_line_chart" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+</div>
 
 
-How about a yummy crepe?
+Regarding race, I also plotted the results and conducted a chi-squared test which also indicate that there is a relationship between race and different personality measures such as extroversion and conscientiousness.
 
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
+<div>
+    <a href="https://plot.ly/~keiko/14/?share_key=Hgd1N5LJqRreSCjgHovL4y" target="_blank" title="race-test-results" style="display: block; text-align: center;"><img src="https://plot.ly/~keiko/14.png?share_key=Hgd1N5LJqRreSCjgHovL4y" alt="race-test-results" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+</div>
 
-Here's a code chunk:
 
-~~~
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-~~~
+As for sexual orientation, I found that those who labelled themselves heterosexuals registered higher levels of emotional stability and lower levels of depression and anxiety, while those who self-registered as bisexuals were on the other end of the spectrum.
 
-And here is the same code with syntax highlighting:
+<div>
+    <a href="https://plot.ly/~keiko/12/?share_key=UFP4o8fx8orCd3xGUbBCGx" target="_blank" title="make-subplots-multiple-with-titles" style="display: block; text-align: center;"><img src="https://plot.ly/~keiko/12.png?share_key=UFP4o8fx8orCd3xGUbBCGx" alt="make-subplots-multiple-with-titles" style="max-width: 100%;width: 800px;"  width="800" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+</div>
 
-```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-```
 
-And here is the same code yet again but with line numbers:
+Finally, regarding country of origin, I found that stress scores were higher for some Middle Eastern and African countries.
 
-{% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-{% endhighlight %}
+<div>
+    <a href="https://plot.ly/~keiko/48/?share_key=80LGKcK36wBktoMpKM5KTA" target="_blank" title="plot from API (18)" style="display: block; text-align: center;"><img src="https://plot.ly/~keiko/48.png?share_key=80LGKcK36wBktoMpKM5KTA" alt="plot from API (18)" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+</div>
 
-## Boxes
-You can add notification, warning and error boxes like this:
+In conclusion, characteristics inherent to our identity are related to our personality and behavioural traits, but it is still to be investigated how this population of online test takers differs from the general population.
 
-### Notification
-
-{: .box-note}
-**Note:** This is a notification box.
-
-### Warning
-
-{: .box-warning}
-**Warning:** This is a warning box.
-
-### Error
-
-{: .box-error}
-**Error:** This is an error box.
