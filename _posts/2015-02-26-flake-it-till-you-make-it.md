@@ -1,15 +1,31 @@
 ---
 layout: post
-title: Flake it till you make it
-subtitle: Excerpt from Soulshaping by Jeff Brown
+title: Can machine learning models accurately detect hate speech?
+subtitle: A logistic regression model with 86% accuracy
 bigimg: /img/path.jpg
 tags: [books, test]
 ---
 
-Under what circumstances should we step off a path? When is it essential that we finish what we start? If I bought a bag of peanuts and had an allergic reaction, no one would fault me if I threw it out. If I ended a relationship with a woman who hit me, no one would say that I had a commitment problem. But if I walk away from a seemingly secure route because my soul has other ideas, I am a flake?
+As an aspiring data science, I created a classifier to correctly identify hateful or offensive speech on Twitter. You can check it out for yourself [here](https://nchibana-twitter-hate-speech.herokuapp.com/predictions).
 
-The truth is that no one else can definitively know the path we are here to walk. It’s tempting to listen—many of us long for the omnipotent other—but unless they are genuine psychic intuitives, they can’t know. All others can know is their own truth, and if they’ve actually done the work to excavate it, they will have the good sense to know that they cannot genuinely know anyone else’s. Only soul knows the path it is here to walk. Since you are the only one living in your temple, only you can know its scriptures and interpretive structure.
+The model used to make these predictions was trained on a combination of two labeled datasets, with more than 100,000 tweets.
 
-At the heart of the struggle are two very different ideas of success—survival-driven and soul-driven. For survivalists, success is security, pragmatism, power over others. Success is the absence of material suffering, the nourishing of the soul be damned. It is an odd and ironic thing that most of the material power in our world often resides in the hands of younger souls. Still working in the egoic and material realms, they love the sensations of power and focus most of their energy on accumulation. Older souls tend not to be as materially driven. They have already played the worldly game in previous lives and they search for more subtle shades of meaning in this one—authentication rather than accumulation. They are often ignored by the culture at large, although they really are the truest warriors.
+56 percent of them were labeled “Normal, 39 percent as “Offensive”, and 5 percent as “Hateful.” Of those categorized as hateful, these words to the right were the most commonly found in the data set, not counting stopwords.
 
-A soulful notion of success rests on the actualization of our innate image. Success is simply the completion of a soul step, however unsightly it may be. We have finished what we started when the lesson is learned. What a fear-based culture calls a wonderful opportunity may be fruitless and misguided for the soul. Staying in a passionless relationship may satisfy our need for comfort, but it may stifle the soul. Becoming a famous lawyer is only worthwhile if the soul demands it. It is an essential failure if you are called to be a monastic this time around. If you need to explore and abandon ten careers in order to stretch your soul toward its innate image, then so be it. Flake it till you make it.
+I’ll click here to get a few predictions. I am going to use a few randomly selected tweets to see the results it gives us.
+
+The first one uses several words that would be considered insulting or hateful, so the classifier labels it as hateful. You can also see here the predicted probabilities of the three classes.
+
+The second one doesn’t include insults or strong adjectives, so it is categorized as normal.
+
+The multiclass classifier has an accuracy score of 86%, a precision score of 90% for normal speech, but only 33% precision and recall for hateful speech detection.
+
+This is probably due to the existence of class imbalance, as only 5% of the tweets in the dataset were labeled hateful. 
+
+If we reconfigure this as a binary classifier, then the accuracy of the model increases to 90%, with 91% precision and 87% recall.
+
+As an example of a misclassified tweet, this post by Donald Trump was labeled as "offensive" by the model, even though it would not be classified as such by human labelers.
+
+Some shorter tweets tend to be misclassified as hateful because the number of terms is one of the most important features according to the coefficients of the logistic regression model used, along with sentiment scores and number of mentions.
+
+The large area under the ROC curve for the binary version of this classifier reveals that it can distinguish accurately between hateful/offensive tweets and normal ones.
